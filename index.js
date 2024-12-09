@@ -12,5 +12,10 @@ let items = [];
 
 // Function to render the shopping list
 function renderList() {
-    
+    shoppingList.innerHTML = '';
+
+     // Add item name
+     const itemName = document.createElement('strong');
+     itemName.textContent = item.name;
+     listItem.appendChild(itemName);
 }
