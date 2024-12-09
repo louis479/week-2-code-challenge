@@ -34,3 +34,9 @@ if (item.image) {
     itemImage.alt = `${item.name} image`;
     listItem.appendChild(itemImage);
 }
+
+// Toggle purchased status
+listItem.addEventListener('click', () => {
+    items[index].purchased = !items[index].purchased;
+    listItem.classList.toggle('purchased');
+});
