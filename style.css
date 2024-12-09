@@ -106,3 +106,9 @@ li p {
 li:hover {
     background-color: #e2e6ea;
 }
+
+.purchased {
+    text-decoration: line-through;
+    background-color: #d4edda;
+    color: #155724;
+}
