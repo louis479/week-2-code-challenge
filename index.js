@@ -51,3 +51,19 @@ function renderList() {
     });
 }
 
+// Event listener for adding items
+addButton.addEventListener('click', () => {
+    const name = itemInput.value.trim();
+    const details = detailsInput.value.trim();
+    const image = imageInput.value.trim();
+
+    if (name !== '') {
+        items.push({ name, details, image, purchased: false });
+        itemInput.value = ''; // Clear inputs
+        detailsInput.value = '';
+        imageInput.value = '';
+        renderList();
+    } else {
+        alert('Please enter an item name.');
+    }
+});
