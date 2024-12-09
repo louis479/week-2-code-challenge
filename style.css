@@ -62,3 +62,15 @@ button {
     cursor: pointer;
     align-self: flex-start;
 }
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button#clearButton {
+    background-color: #dc3545;
+}
+
+button#clearButton:hover {
+    background-color: #c82333;
+}
