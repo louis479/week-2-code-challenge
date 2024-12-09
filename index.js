@@ -42,12 +42,6 @@ function renderList() {
             listItem.classList.toggle('purchased');
         });
 
-        // Add purchased class if applicable
-        if (item.purchased) {
-            listItem.classList.add('purchased');
-        }
-
-        shoppingList.appendChild(listItem);
-    });
+        
 }
 
