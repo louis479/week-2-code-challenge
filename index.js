@@ -26,3 +26,11 @@ if (item.details) {
     itemDetails.textContent = `Details: ${item.details}`;
     listItem.appendChild(itemDetails);
 }
+
+// Add item image
+if (item.image) {
+    const itemImage = document.createElement('img');
+    itemImage.src = item.image;
+    itemImage.alt = `${item.name} image`;
+    listItem.appendChild(itemImage);
+}
