@@ -67,3 +67,10 @@ addButton.addEventListener('click', () => {
         alert('Please enter an item name.');
     }
 });
+
+// Event listener for clearing the list
+clearButton.addEventListener('click', () => {
+    items = []; // Clear the array
+    renderList();
+});
+
