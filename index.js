@@ -74,3 +74,5 @@ clearButton.addEventListener('click', () => {
     renderList();
 });
 
+// Initial render
+renderList();
