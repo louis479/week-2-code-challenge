@@ -9,34 +9,45 @@ const shoppingList = document.getElementById('shoppingList');
 // Array to store shopping list items
 let items = [];
 
-
 // Function to render the shopping list
 function renderList() {
-    shoppingList.innerHTML = '';
+    shoppingList.innerHTML = ''; // Clear current list
 
-     // Add item name
-     const itemName = document.createElement('strong');
-     itemName.textContent = item.name;
-     listItem.appendChild(itemName);
+    items.forEach((item, index) => {
+        const listItem = document.createElement('li');
+
+        // Add item name
+        const itemName = document.createElement('strong');
+        itemName.textContent = item.name;
+        listItem.appendChild(itemName);
+
+        // Add item details
+        if (item.details) {
+            const itemDetails = document.createElement('p');
+            itemDetails.textContent = `Details: ${item.details}`;
+            listItem.appendChild(itemDetails);
+        }
+
+        // Add item image
+        if (item.image) {
+            const itemImage = document.createElement('img');
+            itemImage.src = item.image;
+            itemImage.alt = `${item.name} image`;
+            listItem.appendChild(itemImage);
+        }
+
+        // Toggle purchased status
+        listItem.addEventListener('click', () => {
+            items[index].purchased = !items[index].purchased;
+            listItem.classList.toggle('purchased');
+        });
+
+        // Add purchased class if applicable
+        if (item.purchased) {
+            listItem.classList.add('purchased');
+        }
+
+        shoppingList.appendChild(listItem);
+    });
 }
 
-// Add item details
-if (item.details) {
-    const itemDetails = document.createElement('p');
-    itemDetails.textContent = `Details: ${item.details}`;
-    listItem.appendChild(itemDetails);
-}
-
-// Add item image
-if (item.image) {
-    const itemImage = document.createElement('img');
-    itemImage.src = item.image;
-    itemImage.alt = `${item.name} image`;
-    listItem.appendChild(itemImage);
-}
-
-// Toggle purchased status
-listItem.addEventListener('click', () => {
-    items[index].purchased = !items[index].purchased;
-    listItem.classList.toggle('purchased');
-});
