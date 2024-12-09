@@ -19,3 +19,10 @@ function renderList() {
      itemName.textContent = item.name;
      listItem.appendChild(itemName);
 }
+
+// Add item details
+if (item.details) {
+    const itemDetails = document.createElement('p');
+    itemDetails.textContent = `Details: ${item.details}`;
+    listItem.appendChild(itemDetails);
+}
