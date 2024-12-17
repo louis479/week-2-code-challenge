@@ -1,3 +1,6 @@
+
+# week-2-code-challenge
+
 # Lucius Shopping Ltd
 
 Welcome to the **Lucius Shopping Ltd** application! This web application is a simple and intuitive tool to manage shopping lists while showcasing various clothing items. It includes interactive features like adding and managing items and provides an elegant display of product categories such as shirts, shorts, and jeans.

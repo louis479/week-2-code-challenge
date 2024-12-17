@@ -6,8 +6,8 @@ const addButton = document.getElementById("addButton");
 const clearButton = document.getElementById("clearButton");
 const shoppingList = document.getElementById("shoppingList");
 
-// Array to store shopping list items
-let items = [];
+// Load items from localStorage if available
+let items = JSON.parse(localStorage.getItem("items")) || [];
 
 // Function to render the shopping list
 function renderList() {
@@ -26,15 +26,15 @@ function renderList() {
         `;
         
         li.innerHTML = itemDetails;
-        
+
         // Add event listener for marking as purchased/unpurchased
         const toggleButton = li.querySelector(".toggleButton");
         toggleButton.addEventListener("click", () => togglePurchased(index));
-        
+
         // Add event listener for deleting the item
         const deleteButton = li.querySelector(".deleteButton");
         deleteButton.addEventListener("click", () => deleteItem(index));
-        
+
         // Append the list item to the shopping list
         shoppingList.appendChild(li);
     });
@@ -58,6 +58,7 @@ function addItem(event) {
         };
         
         items.push(newItem);
+        localStorage.setItem("items", JSON.stringify(items)); // Save items to localStorage
         renderList();  // Re-render the list after adding the item
 
         // Clear the input fields
@@ -76,18 +77,21 @@ function addItem(event) {
 // Function to toggle the purchased status of an item
 function togglePurchased(index) {
     items[index].purchased = !items[index].purchased;
+    localStorage.setItem("items", JSON.stringify(items)); // Update localStorage
     renderList();  // Re-render the list after changing the purchased status
 }
 
 // Function to delete an item from the shopping list
 function deleteItem(index) {
     items.splice(index, 1);  // Remove the item from the array
+    localStorage.setItem("items", JSON.stringify(items)); // Update localStorage
     renderList();  // Re-render the list after deleting the item
 }
 
 // Function to clear the entire shopping list
 function clearList() {
     items = [];
+    localStorage.setItem("items", JSON.stringify(items)); // Clear localStorage
     renderList();  // Re-render the list after clearing
 }
 
@@ -96,3 +100,6 @@ addButton.addEventListener("click", addItem);
 
 // Event listener for the "Clear List" button
 clearButton.addEventListener("click", clearList);
+
+// Initial render of the list
+renderList();

@@ -3,16 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmation</title>
     <link rel="stylesheet" href="style.css">
+    <title>Order Confirmation | Lucius Shopping Ltd</title>
 </head>
 <body>
-    <h1>Congratulations!</h1>
-    <p>Your item has been successfully added to the shopping list.</p>
-    <a href="index.html">Go back to the shopping list</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h1>Order Confirmation</h1>
+        
+        <p>Thank you for your purchase! Your order has been successfully placed.</p>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p><strong>Order Number:</strong> #123456</p>
+            <p><strong>Order Date:</strong> December 17, 2024</p>
+            <p><strong>Total Amount:</strong> $150.00</p>
+            
+            <h3>Items Purchased:</h3>
+            <ul>
+                <li><strong>Modern Casual Shirt</strong> - $40.00</li>
+                <li><strong>Relaxed Fit Cotton Shorts</strong> - $30.00</li>
+                <li><strong>Slim-Fit Blue Jeans</strong> - $60.00</li>
+                <li><strong>Printed Button-Up Shirt</strong> - $20.00</li>
+            </ul>
+        </div>
+
+        <h1>Congratulations!</h1>
+        <p>Your item has been successfully added to the shopping list.</p>
+        <a href="index.html">Go back to the shopping list</a>
+
+        <div class="next-steps">
+            <h3>What would you like to do next?</h3>
+            <a href="index.html" class="btn">Continue Shopping</a>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Lucius Shopping Ltd. All Rights Reserved.</p>
+    </footer>
+
     <script>
         // Display the confirmation alert
         alert("Congratulations! Your item has been added.");
     </script>
+    <script src="index.js"></script>
 </body>
 </html>
+
